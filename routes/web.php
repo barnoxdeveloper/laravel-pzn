@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/andre', function () {
+    return "Hello Andre";
+});
+
+Route::redirect('/youtube', '/andre');
+
+Route::fallback(function (){
+    return '404 By Andre';
+});
